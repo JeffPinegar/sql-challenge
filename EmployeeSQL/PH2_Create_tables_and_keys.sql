@@ -11,6 +11,9 @@
 -- I modified the  export to split into two schemas 'hr' and 'dept'
 -- ****************************************************************
 
+create schema hr;
+create schema dept;
+
 
 -- hr schemas employee table
 CREATE TABLE hr.emp (
@@ -89,6 +92,6 @@ REFERENCES dept.depts ("dept_id");
 ALTER TABLE dept.dept_mgr ADD CONSTRAINT "fk_dept_mgr_dept_id" FOREIGN KEY("dept_id")
 REFERENCES dept.depts ("dept_id");
 
-ALTER TABLE dept.dept_mgr ADD CONSTRAINT "fk_dept_mgr_emp_id" FOREIGN KEY("emp_id")
-REFERENCES dept.emp ("emp_id");
+-- ALTER TABLE dept.dept_mgr ADD CONSTRAINT "fk_dept_mgr_emp_id" FOREIGN KEY("emp_id")
+-- REFERENCES dept.emp ("emp_id");
 

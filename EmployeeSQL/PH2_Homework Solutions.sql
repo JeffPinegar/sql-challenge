@@ -41,6 +41,7 @@ select emp.emp_id, emp.last_name, emp.first_name, depts.dept_name
 	join hr.emp on emp.emp_id = dept_emp.emp_id
 	join dept.depts on dept_emp.dept_id = depts.dept_id	
 	order by emp.emp_id
+-- The list is longer than the number of employee's because people work in more than one department
 -- Results in:  Q4_Employee_dept_list.cvs
 
 
@@ -77,4 +78,11 @@ select emp.last_name, count(emp_id)
 	from hr.emp
 	Group by emp.last_name
 	order by count DESC
+
 -- Results in:  Q8_Last_name_freq_count.csv
+
+select emp.first_name, count(emp_id)
+	from hr.emp
+	Group by emp.first_name
+	order by count DESC
+-- Another reason to believe this is fake data is there are only 1638 unique last names and 1276 unique first names in pool of +300k employees
